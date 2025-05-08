@@ -1,0 +1,104 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+/* Seções */
+section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+section h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+/* Parágrafos e listas */
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Blocos de código */
+.box-model-css,
+.box-model-html,
+.display-css,
+.display-html,
+.flexbox-css,
+.flexbox-css-2,
+.flexbox-html,
+.Grid-Layout-css,
+.Grid-Layout-css-2,
+.Grid-Layout-html,
+.Position-css,
+.Position-css-2,
+.Position-html,
+.Propriedades-Avançadas-css,
+.Refatoração-css,
+.Responsividade-css,
+.Responsividade-css-2 {
+    background-color: #f0f0f0;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin: 10px 0;
+    border-left: 4px solid #4CAF50;
+    overflow-x: auto;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
