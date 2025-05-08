@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Colinha CSS</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>
+            Colinha Para Estudos De Css
+        </h1>
+    </header>
+
+    <main>
+        <section class="box-model">
+            <h2>Box Model</h2>
+            <h3>Para que serve:</h3>
+            <p>Define como os elementos são renderizados na página, considerando conteúdo, padding, border e margin. Ou
+                seja, tudo que ocupa espaço na tela.</p>
+            <h3>O que precisa para usar:</h3>
+            <p>Nada especial, o box model já é padrão do CSS.Mas <strong>você precisa entender que um elemento
+                    ocupa:</strong></p>
+            <ul>
+                <li>content &#8594; conteúdo (texto, imagem…)</li>
+                <li>padding &#8594; espaço entre conteúdo e borda</li>
+                <li>border &#8594; a borda em si</li>
+                <li>margin &#8594; espaço externo entre outros elementos</li>
+            </ul>
+            <h3>O que colocar nos filhos se usar no pai:
+            </h3>
+            <p>Não precisa colocar nada nos filhos para o box model funcionar, mas filhos também têm box model próprio.
+                Às vezes usamos:</p>
+            <p>
+                <b>" box-sizing: border-box; "</b>
+            </p>
+            <p>
+                no pai (ou globalmente) para os filhos não “quebrarem” o layout somando padding/border ao tamanho.
+            </p>
+            <div class="box-model-css">
+                <p>
+                    css:
+                    <br>
+                    <br>
+                    * { <br>
+                    &nbsp;&nbsp;&nbsp;box-sizing: border-box; <br>
+                    }<br>
+                    <br>
+                    .box { <br>
+                    &nbsp;&nbsp;&nbsp;width: 200px;<br>
+                    &nbsp;&nbsp;&nbsp;height: 100px;<br>
+                    &nbsp;&nbsp;&nbsp;padding: 20px;<br>
+                    &nbsp;&nbsp;&nbsp;border: 5px solid black;<br>
+                    &nbsp;&nbsp;&nbsp;margin: 10px;<br>
+                    }
+                </p>
+            </div>
+            <div class="box-model-html">
+                <p>
+                    html:
+                    <br>
+                    &lt; div class="box" &gt; Olá! &lt; /div &gt;
+                </p>
+                <h3>
+                    Quando e como usar:
+
+                </h3>
+                <p>
+                    Sempre! É fundamental entender o box model para controlar bem tamanhos e espaçamentos.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="display">
+            <h2>
+                Display
+            </h2>
+            <h3>Para que serve:</h3>
+            Define como um elemento é exibido na tela: bloco, inline, flex, grid, etc.
+            <h3>O que precisa para usar:</h3>
+            Colocar a propriedade display no elemento pai ou individualmente em cada elemento.
+            <h3>
+                O que colocar nos filhos se usar no pai:
+                Depende do tipo:
+            </h3>
+            <ul>
+                <li>display: flex ou grid &#8594; filhos viram flex/grid items automaticamente.</li>
+                <li>display: block &#8594; cada filho quebra linha.</li>
+                <li>display: inline &#8594; filhos ficam na mesma linha.</li>
+                <li>display: inline-block &#8594; filhos ficam na mesma linha, mas aceitam tamanho.</li>
+            </ul>
+            <h3>Exemplo de uso:</h3>
+            <div class="display-css">
+                <p>
+                    css: <br>
+                    <br>
+                    .container {<br>
+                    &nbsp;&nbsp;&nbsp;display: flex;<br>
+                    } <br>
+                    .item {<br>
+                    &nbsp;&nbsp;&nbsp;margin: 10px;<br>
+                    } <br>
+                </p>
+            </div>
+            <div class="display-html">
+                <p>
+                    &lt; div class="container" &gt; <br>
+                    &nbsp;&nbsp;&nbsp; &lt; div class="item" &gt; A &lt;/div &gt; <br>
+                    &nbsp;&nbsp;&nbsp; &lt; div class="item" &gt; B &lt;/div &gt; <br>
+                    &lt; /div &gt; <br>
+                </p>
+            </div>
+            <h3>Quando e como usar:</h3>
+            <p>Quando quiser mudar o comportamento de empilhamento/alinhamento:</p>
+            <p>
+            <ul>
+                <li>
+                    bloco → ocupa linha toda
+
+                    inline → ocupa só o necessário
+
+                    flex/grid → para layouts avançados
+                </li>
+            </ul>
+            </p>
+
+        </section>
+
+        <section class="Flexbox">
+            <h2>Flexbox</h2>
+            <h3>Para que serve:</h3>
+            <p>Alinhar e distribuir elementos em linha ou coluna, com muito controle.</p>
+            <h3>O que precisa para usar:</h3>
+            <p>No pai:</p>
+            <div class="flexbox-css">
+                <p>
+                    css: <br>
+                    <br>
+                    display: flex;
+                </p>
+            </div>
+            <h3>O que colocar nos filhos:</h3>
+
+            <ul>
+                <li>flex-grow, flex-shrink, flex-basis &#8594; para controle do espaço</li>
+                <li>order &#8594; muda a ordem visual</li>
+                <li>align-self &#8594; alinha individualmente</li>
+            </ul>
+            <h3>Exemplo de uso:</h3>
+            <div class="flexbox-css-2">
+                <p>
+                    css: <br>
+                    <br>
+                    .container { <br>
+                    &nbsp;&nbsp;&nbsp;display: flex; <br>
+                    &nbsp;&nbsp;&nbsp;justify-content: space-between;<br>
+                    &nbsp;&nbsp;&nbsp;align-items: center;<br>
+                    } <br>
+                    .item { <br>
+                    &nbsp;&nbsp;&nbsp;flex: 1; <br>
+                    } <br>
+                </p>
+            </div>
+
+            <div class="flexbox-html">
+                <p>
+                    html: <br>
+                    <br>
+                    &lt; div class="container" &gt; <br>
+                    &nbsp;&nbsp;&nbsp; &lt; div class="item" &gt; A &lt; /div &gt; <br>
+                    &nbsp;&nbsp;&nbsp; &lt; div class="item" &gt; B &lt; /div &gt; <br>
+                    &nbsp;&nbsp;&nbsp; &lt; div class="item" &gt; C &lt; /div &gt; <br>
+                    &lt; /div &gt;
+                </p>
+            </div>
+            <h3>Quando e como usar:</h3>
+            <p>Quando quiser:</p>
+            <ul>
+                <li>alinhamento fácil (horizontal/vertical)</li>
+                <li>distribuição automática de espaço</li>
+                <li>fazer menus, cards, cabeçalhos, etc.</li>
+            </ul>
+        </section>
+
+        <section class="Grid-Layout">
+            <h2>Grid Layout</h2>
+            <h3>Para que serve:</h3>
+            <p>Criar layouts em grade (linhas e colunas), perfeito para layouts de página.</p>
+            <h3>O que precisa para usar:</h3>
+            <p>No pai:</p>
+
+            <div class="Grid Layout-css">
+                <p>
+                    css: <br>
+                    <br>
+                    display: grid; <br>
+                    grid-template-columns: repeat(3, 1fr);
+                </p>
+            </div>
+            <h3>O que colocar nos filhos:</h3>
+            <ul>
+                <li>grid-column, grid-row &#8594; para posicionar em lugares específicos</li>
+                <li>Ou deixar o grid auto-organizar</li>
+            </ul>
+            <h3>Exemplo de uso:</h3>
+            <div class="Grid Layout-css-2">
+                <p>
+                    css: <br>
+                    <br>
+                    .container { <br>
+                    &nbsp;&nbsp;&nbsp; display: grid; <br>
+                    &nbsp;&nbsp;&nbsp; grid-template-columns: repeat(3, 1fr); <br>
+                    &nbsp;&nbsp;&nbsp; gap: 10px; <br>
+                    } <br>
+                    .item { <br>
+                    &nbsp;&nbsp;&nbsp; background: lightgray; <br>
+                    }
+                </p>
+            </div>
+
+            <div class="Grid Layout-html">
+                <p>
+                    html: <br>
+                    <br>
+                    &lt; div class="container" &gt;
+                    &nbsp;&nbsp;&nbsp; &lt; div class="item">1 &lt; /div &gt;
+                    &nbsp;&nbsp;&nbsp; &lt; div class="item">2 &lt; /div &gt;
+                    &nbsp;&nbsp;&nbsp; &lt; div class="item">3 &lt; /div &gt;
+                    &lt; /div &gt;
+                </p>
+            </div>
+            <h3>Quando e como usar:</h3>
+            <p>Quando precisar de:</p>
+            <ul>
+                <li>tabelas de cards</li>
+                <li>layouts de página com várias colunas/linhas</li>
+                <li>áreas responsivas e organizadas</li>
+            </ul>
+        </section>
+
+        <section class="Position">
+            <h2>Position</h2>
+            <h3>Para que serve:</h3>
+            <p>Controlar o posicionamento exato dos elementos.</p>
+
+            <h3>O que precisa para usar:</h3>
+            <p>No elemento (pai ou filho):</p>
+
+            <div class="Position-css">
+                <p>
+                    position: relative | absolute | fixed | sticky;
+                </p>
+            </div>
+
+            <h3> O que colocar nos filhos se usar no pai:</h3>
+            <p>Se o pai tem <b>position: relative</b> &#8594; filhos com <b>position: absolute</b> se posicionam
+                relativos a
+                ele.</p>
+
+            <div class="Position-css-2">
+                <p>
+                    css: <br>
+                    <br>
+                    .container { <br>
+                    &nbsp;&nbsp;&nbsp; position: relative; <br>
+                    } <br>
+                    .item { <br>
+                    &nbsp;&nbsp;&nbsp; position: absolute; <br>
+                    &nbsp;&nbsp;&nbsp; top: 10px; <br>
+                    &nbsp;&nbsp;&nbsp; left: 20px; <br>
+                    }
+                </p>
+            </div>
+
+            <div class="Position-html">
+                <p>
+                    html: <br>
+                    <br>
+                    &lt; div class="container" &gt;
+                    &nbsp;&nbsp;&nbsp; &lt; div class="item" &gt; Sou absoluto! &lt; /div &gt;
+                    &lt; /div &gt;
+                </p>
+            </div>
+
+            <h3>Quando e como usar:</h3>
+            <p>Quando quiser:</p>
+            <ul>
+                <li>criar sobreposição (ex.: modal, tooltip)</li>
+                <li>posicionamento fixo na tela (menu fixo, botão flutuante)</li>
+                <li>sticky headers</li>
+            </ul>
+        </section>
+
+        <section class="Propriedades Avançadas">
+            <h2>Propriedades Avançadas</h2>
+            <h3>Para que serve:</h3>
+            <p>Aprimorar estilos com efeitos visuais e interações.</p>
+            <h3> O que precisa para usar:</h3>
+            <p>Só aplicar no CSS. <br>
+                <br>
+                Exemplos:
+            </p>
+            <ul>
+                <li>box-shadow &#8594; sombras</li>
+                <li>transition &#8594; animações suaves</li>
+                <li>transform &#8594; rotação, escala</li>
+                <li>z-index &#8594; ordem de sobreposição</li>
+            </ul>
+
+            <h3>O que colocar nos filhos:</h3>
+            <p>Depende: às vezes filhos precisam de <b>z-index</b> para não ficarem escondidos.</p>
+            <h3>Exemplo de uso:</h3>
+
+            <div class="Propriedades Avançadas-css">
+                <p>
+                    .button { <br>
+                    &nbsp;&nbsp;&nbsp; background: blue; <br>
+                    &nbsp;&nbsp;&nbsp; transition: background 0.3s; <br>
+                    } <br>
+                    .button:hover { <br>
+                    &nbsp;&nbsp;&nbsp; background: red; <br>
+                    } <br>
+                </p>
+            </div>
+
+            <h3>Quando e como usar:</h3>
+            <p>Para melhorar experiência visual:</p>
+            <ul>
+                <li>hover effects</li>
+                <li>animações</li>
+                <li>sombras, sobreposição</li>
+            </ul>
+        </section>
+
+        <section class="Refatoração">
+            <h2>Refatoração</h2>
+            <h3> Para que serve:</h3>
+            <p>Melhorar, simplificar e organizar o código CSS.</p>
+            <h3>O que precisa para usar:</h3>
+            <p>Nada especial, é prática de organização:</p>
+            <ul>
+                <li>usar classes reutilizáveis</li>
+                <li>remover código duplicado</li>
+                <li>usar variáveis CSS (<b>:root { --main-color: blue; }</b>)</li>
+            </ul>
+            <h3>O que colocar nos filhos:</h3>
+            <p>Nada obrigatório, mas filhos devem herdar classes/estilos organizados.</p>
+            <h3>Exemplo de uso:</h3>
+
+            <div class="Refatoração-css">
+                <p>
+                    css: <br>
+                    <br>
+                    .button { <br>
+                    &nbsp;&nbsp;&nbsp; padding: 10px; <br>
+                    &nbsp;&nbsp;&nbsp; border-radius: 5px; <br>
+                    } <br>
+                    .primary { <br>
+                    &nbsp;&nbsp;&nbsp; background: blue; <br>
+                    } <br>
+                    .secondary { <br>
+                    &nbsp;&nbsp;&nbsp; background: gray; <br>
+                    }
+                </p>
+            </div>
+            <h3>Quando e como usar:</h3>
+            <p>Sempre que o CSS crescer muito ou ficar confuso.</p>
+        </section>
+        
+        <section class="Responsividade">
+            <h2>Responsividade</h2>
+            <h3>Para que serve:</h3>
+            <p>Adaptar o layout para diferentes tamanhos de tela (celular, tablet, desktop).</p>
+            <h3>O que precisa para usar:</h3>
+            <p>Media queries:</p>
+
+            <div class="Responsividade-css">
+                <p>
+                    css: <br>
+                    <br>
+                    @media (max-width: 600px) { <br>
+                    &nbsp;&nbsp; .container { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-direction: column; <br>
+                    &nbsp;&nbsp; } <br>
+                    }
+                </p>
+            </div>
+
+            <h3>O que colocar nos filhos:</h3>
+            <p>Às vezes ajustar tamanho, padding, margem, ordem, etc., dentro da media query.</p>
+            <h3>Exemplo de uso:</h3>
+
+            <div class="Responsividade-css-2">
+                <p>
+                    css: <br>
+                    <br>
+                    .container { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex; <br>
+                    } <br>
+                    @media (max-width: 600px) { <br>
+                    &nbsp;&nbsp; .container { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-direction: column; <br>
+                    &nbsp;&nbsp; } <br>
+                    }
+                </p>
+            </div>
+
+            <h3>Quando e como usar:</h3>
+            <p>Quando quiser que o site funcione bem em celular e desktop.</p>
+
+
+        </section>
+    </main>
+
+</body>
+
+</html>
